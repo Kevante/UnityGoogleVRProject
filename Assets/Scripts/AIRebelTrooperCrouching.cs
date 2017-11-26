@@ -24,6 +24,7 @@ public class AIRebelTrooperCrouching : MonoBehaviour {
     bool isShooting = false;
     bool isBackingUp = false;
     bool isEngaged = true;
+    bool isAlive = true;
     
 
     bool isLightsaberOn() { return lightsaberParent; }
@@ -89,7 +90,7 @@ public class AIRebelTrooperCrouching : MonoBehaviour {
         pointEmitterAtTarget();
 
         // When lightsaber is ignighted, start firing
-        if (Vector3.Distance(lightsaber.endPosition.localPosition, lightsaber.startPosition.localPosition) > .1 && !isAiming) {
+        if (Vector3.Distance(lightsaber.endPosition.localPosition, lightsaber.startPosition.localPosition) > .1 && !isAiming && isAlive) {
             timeDelay -= Time.deltaTime;
             if (timeDelay < 1) {
                 openFireOrder.enabled = true;
@@ -104,7 +105,7 @@ public class AIRebelTrooperCrouching : MonoBehaviour {
         }
 
         // If target gets too close, back up
-        if (isAiming) {
+        if (isAiming && isAlive) {
             pointEmitterAtTarget();
             if (isTargetInsideDangerZone()) {
                 this.transform.Translate(0, 0, -baseSpeed);
@@ -119,7 +120,7 @@ public class AIRebelTrooperCrouching : MonoBehaviour {
             }
         }
         
-        if (isShooting) {
+        if (isShooting && isAlive) {
             timeDelay -= Time.deltaTime;
             if (timeDelay < 0) {
                 fireLazer();
@@ -128,12 +129,22 @@ public class AIRebelTrooperCrouching : MonoBehaviour {
             }
         }
         
-        if (isBackingUp) {
+        if (isBackingUp && isAlive) {
             timeDelay -= Time.deltaTime;
             if (timeDelay < 0) {
                 fireLazer();
                 isShooting = false;
                 timeDelay = Random.Range(2f, 4f);
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        if(collision.gameObject.tag.Equals("lightsaber")) {
+            if (isAlive) {
+                characterAnimator.SetTrigger("isDead");
+                isAlive = false;
+                Destroy(gameObject, 3);
             }
         }
     }

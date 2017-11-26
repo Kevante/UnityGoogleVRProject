@@ -196,6 +196,11 @@ Prefab:
       propertyPath: shotGroupRadius
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 54280251955381612, guid: bb63129d7101a1c42b57d40ca310b572,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb63129d7101a1c42b57d40ca310b572, type: 2}
   m_IsPrefabParent: 0
@@ -471,6 +476,11 @@ Prefab:
       propertyPath: shotGroupRadius
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 54280251955381612, guid: bb63129d7101a1c42b57d40ca310b572,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb63129d7101a1c42b57d40ca310b572, type: 2}
   m_IsPrefabParent: 0
@@ -553,6 +563,11 @@ Prefab:
       propertyPath: shotGroupRadius
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 54280251955381612, guid: bb63129d7101a1c42b57d40ca310b572,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb63129d7101a1c42b57d40ca310b572, type: 2}
   m_IsPrefabParent: 0
@@ -628,6 +643,11 @@ Prefab:
         type: 2}
       propertyPath: shotGroupRadius
       value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54789976464177600, guid: 9f19181c393902a488f112b5fda473b4,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f19181c393902a488f112b5fda473b4, type: 2}
@@ -779,6 +799,11 @@ Prefab:
       propertyPath: shotGroupRadius
       value: 2.1
       objectReference: {fileID: 0}
+    - target: {fileID: 54789976464177600, guid: 9f19181c393902a488f112b5fda473b4,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f19181c393902a488f112b5fda473b4, type: 2}
   m_IsPrefabParent: 0
@@ -883,6 +908,11 @@ Prefab:
         type: 2}
       propertyPath: shotGroupRadius
       value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54789976464177600, guid: 9f19181c393902a488f112b5fda473b4,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f19181c393902a488f112b5fda473b4, type: 2}
@@ -1128,6 +1158,20 @@ Prefab:
       propertyPath: shotGroupRadius
       value: 2.1
       objectReference: {fileID: 0}
+    - target: {fileID: 54789976464177600, guid: 9f19181c393902a488f112b5fda473b4,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54789976464177600, guid: 9f19181c393902a488f112b5fda473b4,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252040969866122, guid: 9f19181c393902a488f112b5fda473b4, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f19181c393902a488f112b5fda473b4, type: 2}
   m_IsPrefabParent: 0
@@ -1234,6 +1278,11 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1757449810}
+    - target: {fileID: 54280251955381612, guid: bb63129d7101a1c42b57d40ca310b572,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb63129d7101a1c42b57d40ca310b572, type: 2}
   m_IsPrefabParent: 0
@@ -1328,6 +1377,10 @@ Prefab:
         type: 2}
       propertyPath: m_Drag
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357328120759090, guid: 06acb11fee51b1647a45412100ba8ac0, type: 2}
+      propertyPath: m_TagString
+      value: lightsaber
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06acb11fee51b1647a45412100ba8ac0, type: 2}
