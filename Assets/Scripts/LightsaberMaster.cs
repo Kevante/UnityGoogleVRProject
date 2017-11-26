@@ -76,7 +76,7 @@ public class LightsaberMaster : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void FixedUpdate() {
+    void Update() {
         disableBeamsIfRetracted();
         setBeamGlowIntensity();
         // turn lightsaber on and off
