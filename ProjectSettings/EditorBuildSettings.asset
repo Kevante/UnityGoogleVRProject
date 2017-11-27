@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 6f0e32bd034e600468c4ff8cbebb2c5a
+  - enabled: 1
+    path: Assets/Scenes/VaderInTheHallway.unity
+    guid: 141450368d2ff144ba11aaa12c3c9193
+  - enabled: 1
+    path: Assets/Scenes/PodRacer.unity
+    guid: f5fc2c37d5eb9458aae3cb05db4bf2f7
+  - enabled: 1
+    path: Assets/Scenes/SpookyForest.unity
+    guid: 935f4740f431f074185a0774d5879604
