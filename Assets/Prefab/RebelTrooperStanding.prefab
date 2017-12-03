@@ -109,7 +109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1024931446123864
 GameObject:
   m_ObjectHideFlags: 1
@@ -1571,7 +1571,7 @@ GameObject:
   - component: {fileID: 195745875326599058}
   m_Layer: 0
   m_Name: RebelTrooperStanding
-  m_TagString: Untagged
+  m_TagString: rebel standing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7038,7 +7038,7 @@ Transform:
   m_GameObject: {fileID: 1283521881628968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.00471, y: 0, z: -0.0009}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100.00013, y: 100, z: 100.00013}
   m_Children:
   - {fileID: 4935298853917308}
   - {fileID: 4575046597515514}
@@ -7048,7 +7048,7 @@ Transform:
   - {fileID: 4992961244216560}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -97.248, z: 0}
 --- !u!4 &4406605520597796
 Transform:
   m_ObjectHideFlags: 1
@@ -19500,7 +19500,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -19546,7 +19546,7 @@ MonoBehaviour:
   dangerZone: 4
   backUpDistance: 2
   laserSpeed: 800
-  shotGroupRadius: 2
+  shotGroupRadius: 2.5
   attackRange: 12
 --- !u!136 &136448232854813998
 CapsuleCollider:

@@ -9,7 +9,7 @@ public class AIRebelTrooperStanding : MonoBehaviour {
     public Transform gun;
     public Transform laserEmitter;
     public GameObject laserPrefab;
-    public GameObject lightsaberParent;
+    public Light beamGlow;
     public AudioSource openFireOrder;
     public float baseSpeed = .04f;
     public float dangerZone = 4;
@@ -19,7 +19,6 @@ public class AIRebelTrooperStanding : MonoBehaviour {
     public float attackRange = 12;
 
     Animator characterAnimator;
-    LightsaberMaster lightsaber;
     float timeDelay;
     bool isAiming = false;
     bool isShooting = false;
@@ -29,7 +28,7 @@ public class AIRebelTrooperStanding : MonoBehaviour {
     bool isAlive = true;
 
 
-    bool isLightsaberOn() { return lightsaberParent; }
+    bool isLightsaberOn() { return beamGlow.intensity > 0; }
     bool isTargetInsideDangerZone() { return getDistanceToTarget() < dangerZone; }
     bool isTargetInsideAttackRange() { return getDistanceToTarget() < attackRange; }
 
@@ -44,6 +43,15 @@ public class AIRebelTrooperStanding : MonoBehaviour {
     float getDistanceToTarget() { return Vector3.Distance(target.position, this.transform.position); }
 
     // Methods
+    public void kill() {
+        if (isAlive) {
+            characterAnimator.SetTrigger("isDead");
+            isAlive = false;
+            Destroy(gameObject, 3);
+        }
+        Debug.Log("Kill");
+    }
+
     void aim() {
         if (isLightsaberOn()) {
             characterAnimator.SetBool("isAiming", true);
@@ -81,7 +89,6 @@ public class AIRebelTrooperStanding : MonoBehaviour {
     // Use this for initialization
     void Start() {
         characterAnimator = GetComponent<Animator>();
-        lightsaber = lightsaberParent.GetComponent<LightsaberMaster>();
         timeDelay = Random.Range(3.0f, 4.0f);
     }
 
@@ -93,17 +100,33 @@ public class AIRebelTrooperStanding : MonoBehaviour {
         pointEmitterAtTarget();
         targetInRange = isTargetInsideAttackRange();
 
+        /*
         // When lightsaber is ignighted, start firing
         if (Vector3.Distance(lightsaber.endPosition.localPosition, lightsaber.startPosition.localPosition) > .1 && !isAiming && isAlive) {
             timeDelay -= Time.deltaTime;
             if (timeDelay < 1) {
                 openFireOrder.enabled = true;
                 if (timeDelay < 0) {
+                    characterAnimator.SetBool("isFiring", true);
                     isAiming = true;
-                    if (targetInRange) {
-                        characterAnimator.SetBool("isFiring", true);
-                        fireLazer();
-                    }
+                    fireLazer();
+
+                    timeDelay = Random.Range(.5f, 1.5f);
+                }
+            }
+        }
+        */
+
+        // When lightsaber is ignighted, start firing
+        if (beamGlow.intensity > 0 && !isAiming && isAlive) {
+            timeDelay -= Time.deltaTime;
+            if (timeDelay < 1) {
+                openFireOrder.enabled = true;
+                if (timeDelay < 0) {
+                    characterAnimator.SetBool("isFiring", true);
+                    isAiming = true;
+                    fireLazer();
+
                     timeDelay = Random.Range(.5f, 1.5f);
                 }
             }
@@ -142,16 +165,6 @@ public class AIRebelTrooperStanding : MonoBehaviour {
                 fireLazer();
                 isShooting = false;
                 timeDelay = Random.Range(2f, 4f);
-            }
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag.Equals("lightsaber")) {
-            if (isAlive) {
-                characterAnimator.SetTrigger("isDead");
-                isAlive = false;
-                Destroy(gameObject, 3);
             }
         }
     }
